@@ -22,5 +22,7 @@ RUN sudo echo "Running 'sudo' for Gitpod: success" && \
     mkdir /home/gitpod/.bashrc.d && \
     (echo; echo "for i in \$(ls \$HOME/.bashrc.d/*); do source \$i; done"; echo) >> /home/gitpod/.bashrc
 
+RUN echo "export PATH=/usr/local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin" > /home/gitpod/.bashrc.d/setenv.sh
+
 # configure git-lfs
 RUN sudo git lfs install --system
